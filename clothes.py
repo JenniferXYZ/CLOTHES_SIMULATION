@@ -4,7 +4,7 @@ import sys
 
 
 #Global Variable
-filename = "hi"
+filename = "test"
 
 def get_working_dir () :
 	global wrspFldr
@@ -23,7 +23,7 @@ def get_working_dir () :
 def import_obj () :
 
 	#import obj files  
-	cmds.file( wrspFldr +'/test.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = 'VR', mnc = True)
+	cmds.file( wrspFldr + '//' + filename + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = 'VR', mnc = True)
 	cmds.select('VR:Mesh',r = True)
 	cmds.rename('VR:Mesh' ,'Object1')
 

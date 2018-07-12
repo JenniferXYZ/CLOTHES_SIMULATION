@@ -46,6 +46,6 @@ def psource(module):
     return modname
 
 # When you import a file you must give it the full path
-psource( wrspFldr + '/CLOTHES.py' )
+psource( wrspFldr + '/clothes.py' )
 
-CLOTHES.main()
+clothes.main()
