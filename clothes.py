@@ -3,18 +3,18 @@ import os.path
 import sys
 
 
+#Global Variable
+filename = "hi"
+
 def get_working_dir () :
+	global wrspFldr
 	#Get working directory and script location
 	sceneName = cmds.file( q = True, sn = True)
 	print (sceneName)
 	if os.path.exists(sceneName):
-	   # current folder 
+	   # current folder    
 	   wrspFldr = os.path.dirname(sceneName)
 	   print (wrspFldr + "yay")
-	   #if os.path.exists(wrspFldr+'test.obj'):
-	       #print "Mesh exists"
-	   #else:
-	       #print "Cannot find mesh"
 	else:
 	   print "Cannot find current project directory" 
 	 
@@ -23,7 +23,7 @@ def get_working_dir () :
 def import_obj () :
 
 	#import obj files  
-	cmds.file(wrspFldr+'/test.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = 'VR', mnc = True)
+	cmds.file( wrspFldr +'/test.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = 'VR', mnc = True)
 	cmds.select('VR:Mesh',r = True)
 	cmds.rename('VR:Mesh' ,'Object1')
 
@@ -37,15 +37,29 @@ def import_obj () :
 	cmds.select('Object1',r = True)
 	cmds.polyReduce(ver = 1, p = 60.0)
 
-	#UV editor better use GUI
+def modify_tex () :
+	#create and assign texture
+	textureA = cmds.shadingNode("lambert", asShader = True, name = "TextureA")
+	cmds.setAttr(textureA + ".color", 0.5,0.78,0.28)#grey
+	textureASG = cmds.sets( renderable = True, noSurfaceShader = True, empty = True, name = 'TextureASG')
+
+	cmds.select('Object1',r = True)
+	cmds.defaultNavigation(connectToExisting = True, source = "TextureA", destination = "TextureASG")
+	cmds.sets(e = True, forceElement = "TextureASG")
+
+
+def export_fbx() :
+	cmds.select('Object1',r = True)
+	cmds.file(wrspFldr + '//' + filename + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
+
 
 
 # MAIN FUNCTION
 def main():
 	get_working_dir()
 	import_obj()
-
-
+	modify_tex()
+	export_fbx()
 
 
 
