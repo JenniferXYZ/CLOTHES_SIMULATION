@@ -1,3 +1,4 @@
+import maya.cmds as cmds
 import sys
 import os
 
