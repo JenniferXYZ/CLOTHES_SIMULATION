@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clothes_project", "Assembly-CSharp.csproj", "{1E67D31B-1D6C-53BD-4843-2B134ED36D39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clothes_project", "Assembly-CSharp-firstpass.csproj", "{B198D144-EB87-81F5-582D-70ED7DEFBB68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clothes_project", "Assembly-CSharp-Editor-firstpass.csproj", "{AFF25B9A-A9CB-A9E0-1B5A-199E816DC9C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clothes_project", "Assembly-CSharp-Editor.csproj", "{80E79DE6-6474-E87E-B470-772FF4DD4D36}"
 EndProject
@@ -21,6 +23,10 @@ Global
 		{B198D144-EB87-81F5-582D-70ED7DEFBB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B198D144-EB87-81F5-582D-70ED7DEFBB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B198D144-EB87-81F5-582D-70ED7DEFBB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF25B9A-A9CB-A9E0-1B5A-199E816DC9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF25B9A-A9CB-A9E0-1B5A-199E816DC9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF25B9A-A9CB-A9E0-1B5A-199E816DC9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF25B9A-A9CB-A9E0-1B5A-199E816DC9C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{80E79DE6-6474-E87E-B470-772FF4DD4D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{80E79DE6-6474-E87E-B470-772FF4DD4D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E79DE6-6474-E87E-B470-772FF4DD4D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
