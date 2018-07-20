@@ -5,9 +5,10 @@ using UnityEditor;
 using Obi;
 using UnityEngineInternal;
 
+
 namespace AutoGeneration
 {
-
+    //[ExecuteInEditMode]
     public class autotwoface : MonoBehaviour
     {
 
@@ -39,10 +40,8 @@ namespace AutoGeneration
             //Obi.ObiActor.
         }
         // Update is called once per frame
-        void Update()
-        {
+        void Update() { }
 
-        }
     }
 
 
@@ -51,7 +50,7 @@ namespace AutoGeneration
 
 
 
-
+    //[ExecuteInEditMode]
     public class autocloth : MonoBehaviour
     {
 
@@ -59,11 +58,16 @@ namespace AutoGeneration
         private void Awake()
         {
 
+            // test_mesh();
             // changetoskinnedrender();
             // ObiCloth ss = new ObiCloth();
             //bool s = ss.Initializing;
         }
         // Use this for initialization
+        IEnumerator wait()
+        {
+            yield return new WaitForSeconds(0.03f);
+        }
         IEnumerator Start()
         {
 
@@ -72,6 +76,7 @@ namespace AutoGeneration
             if (!e.MoveNext()) // over the end
             {
                 initialize_cloth_property();
+                // StartCoroutine(wait());
                 //EditorApplication.isPaused = true;
             }
             else
@@ -93,13 +98,19 @@ namespace AutoGeneration
             tmp.enabled = false;
 
         }
+        private void test_mesh()
+        {
+
+            // ObiMeshTopology.CreateInstance("meshtopology");
+        }
         IEnumerator generatecloth()
         {
             here = this.gameObject;
             //Debug.Log(here.name);
             //Debug.Log(this.name);
-            ObiMeshTopology meshtopology = new ObiMeshTopology();
-            meshtopology.InputMesh = here.GetComponent<MeshFilter>().mesh;
+            //ObiMeshTopology.CreateInstance("meshtopology");
+            ObiMeshTopology meshtopology = ScriptableObject.CreateInstance<ObiMeshTopology>();
+            meshtopology.InputMesh = here.GetComponent<MeshFilter>().sharedMesh;
             // Debug.Log(ss.InputMesh.name);
             meshtopology.Generate(); //for meshtoplogy
 
@@ -112,27 +123,41 @@ namespace AutoGeneration
             tmp.SelfCollisions = true;
             //set solve parameters
             // or tmp.Solver = solveroriginal.AddComponent<ObiSolver>();
+
             tmp.Solver = solveroriginal.AddComponent<ObiSolver>();
+            tmp.Solver.name = "Our Model Solver";
             tmp.Solver.maxParticles = 6000;
+            tmp.Solver.volumeConstraintParameters.enabled = false;
+            tmp.Solver.skinConstraintParameters.enabled = false;
+            tmp.Solver.shapeMatchingConstraintParameters.enabled = false;
+            tmp.Solver.tetherConstraintParameters.enabled = false;
+            tmp.Solver.pinConstraintParameters.enabled = false;
+            tmp.Solver.densityConstraintParameters.enabled = false;
+
+
+            tmp.Solver.bendingConstraintParameters.evaluationOrder = Oni.ConstraintParameters.EvaluationOrder.Sequential;   //sequantial to reduce iterations amount
             tmp.Solver.distanceConstraintParameters.iterations = 6;
             tmp.Solver.bendingConstraintParameters.iterations = 6;
             tmp.Solver.collisionConstraintParameters.iterations = 6;
             tmp.Solver.shapeMatchingConstraintParameters.iterations = 6;
             tmp.Solver.stitchConstraintParameters.iterations = 6;
             tmp.Solver.particleCollisionConstraintParameters.iterations = 6;
+            tmp.Solver.substeps = 2;
             //  tmp.Solver.
             tmp.SharedTopology = meshtopology;
 
 
 
+
             yield return tmp.StartCoroutine(tmp.GeneratePhysicRepresentationForMesh());
-            tmp.AddToSolver(null);
+            tmp.AddToSolver(null);   //add constraints back
+
         }
         void initialize_cloth_property()
         {
             // bending constraints
             ObiBendingConstraints bend = this.GetComponent<ObiBendingConstraints>();
-            bend.maxBending = 0.003f;
+            bend.maxBending = 0f;
             // cancel some constraints
             ObiTetherConstraints tether = this.GetComponent<ObiTetherConstraints>();
             tether.enabled = false;
@@ -147,19 +172,79 @@ namespace AutoGeneration
             tmp.SelfCollisions = true;
             tmp.CollisionMaterial = Resources.Load("collision_material/LowFriction") as ObiCollisionMaterial;
 
-            // unfix particle
-            //for (int i = 0; i < tmp.invMasses.Length; i++) 
-            // tmp.invMasses[i]= 0.01f;
 
+            //tmp.runInEditMode = true;  won't destroy after playing
+            //unfix particle
+            //for (int i = 0; i < tmp.invMasses.Length; i++) 
+            //     tmp.invMasses[i]= 0; 
+
+
+        }
+        void manualpause()
+        {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                /* if (!EditorApplication.isPaused)
+                        EditorApplication.isPaused = true;
+                    else
+                        EditorApplication.isPaused = false;
+                        */
+                /*if (Time.timeScale > 0)
+                    Time.timeScale = 0;
+                else
+                    Time.timeScale = 1;
+                    */
+                if (EditorApplication.isPlaying == true)
+                {
+                    Debug.Log("sss");
+                    Debug.Break();
+                }
+                else
+                {
+                    ///Debug.Log("sss");
+                    EditorApplication.isPlaying = true;
+                }
+            }
 
         }
         // Update is called once per frame
+        /*#if UNITY_EDITOR
+            void Update()
+            {
+                // Debug.Log("Its time: " + Time.time);
+                if (Application.isEditor && !Application.isPlaying)
+                {
+                    //do what you want
+                    Debug.Log("Its time: " + Time.time);
+                }
+            }
+        #endif
+        */
+
         void Update()
         {
+            // manualpause();
 
+            if (Application.isPlaying)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Break();
+
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    EditorApplication.isPaused = false;
+                }
+
+            }
+            //if(Application.platform == RuntimePlatform.WindowsEditor)
+            //     Debug.Log("Do something special here!");
         }
+
     }
-
-
-
 }

@@ -159,9 +159,10 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\sim_scripts\AutoGeneration.cs" />
+     <Compile Include="Assets\sim_scripts\draw_Line.cs" />
      <Compile Include="Assets\sim_scripts\FoldableMesh.cs" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ParticleShader.shader" />
-     <None Include="Assets\Material\StandardBackfaces.shader" />
+     <None Include="Assets\Resources\shader\StandardBackfaces.shader" />
      <None Include="Assets\Obi\Resources\ObiMaterials\ObiParticles.cginc" />
      <None Include="Assets\Obi\Plugins\libOni.bundle\Contents\Resources\CMakeLists.txt" />
      <None Include="Assets\Obi\Resources\ObiMaterials\SimpleParticleShader.shader" />
