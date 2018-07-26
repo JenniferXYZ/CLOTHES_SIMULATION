@@ -47,6 +47,6 @@ def psource(module):
     return modname
 
 # When you import a file you must give it the full path
-psource( wrspFldr + '/combine_children.py' )
+psource( wrspFldr + '/read_json.py' )
 
-combine_children.main()
+read_json.main()

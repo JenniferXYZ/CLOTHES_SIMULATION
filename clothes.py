@@ -23,7 +23,7 @@ def get_working_dir () :
 def import_obj () :
 
 	#import obj files  
-	cmds.file( wrspFldr + '//' + filename + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = filename, mnc = True)
+	cmds.file( wrspFldr + '//Models/' + filename + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = filename, mnc = True)
 	
 	tempfn = filename + ":Mesh"
 
