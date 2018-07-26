@@ -23,30 +23,19 @@ def get_working_dir () :
 def import_obj () :
 
 	#import obj files  
-	cmds.file( wrspFldr + '//' + filename + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = 'VR', mnc = True)
-	cmds.select('VR:Mesh',r = True)
-	cmds.rename('VR:Mesh' ,'Object1')
+	cmds.file( wrspFldr + '//' + filename + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = filename, mnc = True)
+	
+	tempfn = filename + ":Mesh"
+
+	cmds.select(tempfn,r = True)
 
 	#center the pivot and freeze transformation
+
 	cmds.xform(cp = True)
 	cmds.move(0,0,0, rpr = True)
-	cmds.setAttr('Object1.rx', -90)
-	cmds.scale(3,3,3,'Object1', scaleXYZ = True)
-	cmds.makeIdentity('Object1', apply = True, t = 1, r = 1, s = 1, n = 0, pn = 1)
-
-	#reduce dimension
-	cmds.select('Object1',r = True)
-	cmds.polyReduce(ver = 1, p = 60.0)
-
-'''buggy'''
-# def double_sided() :
-# 	cmds.select('Object1',r = True)
-# 	dup = cmds.duplicate('Object1')
-# 	cmds.rename('Object1_dup')
-# 	cmds.select('Object1_dup',r = True)
-# 	cmds.polyNormal(normalMode = 0, ch = True)
-	#Now we have two objects, Object1 and Object1_dup
-	#Needs to assign texture to both
+	cmds.rotate(-90, rotateX = True)
+	cmds.scale(3,3,3, scaleXYZ = True)
+	cmds.makeIdentity( apply = True, t = 1, r = 1, s = 1, n = 0, pn = 1)
 
 
 #Object_List is a list of strings
@@ -62,7 +51,7 @@ def modify_tex () :
 	
 	# global Object_List
 	# Object_List = cmds.ls(selection = True)
-	cmds.select('Object1', r = True)	
+	cmds.select(tempfn, r = True)	
 	cmds.defaultNavigation(connectToExisting = True, source = "TextureA", destination = "TextureASG")
 	cmds.sets(e = True, forceElement = "TextureASG")
 
@@ -76,8 +65,16 @@ def modify_tex () :
 
 # def export_fbx() :
 # 	# cmds.select(ado = True)
-	cmds.select('Object1', r = True)	
+	cmds.select(tempfn, r = True)	
 	cmds.file(wrspFldr + '//' + filename + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
+
+
+def cleanup(fn) :
+	cmds.select(all = True)
+	cmds.delete()
+	boolfn = cmds.namespace(ex = fn)
+	if (boolfn):
+		cmds.namespace(rm = fn)
 
 
 
@@ -85,6 +82,7 @@ def modify_tex () :
 def main():
 	
 	# get_working_dir()
+	cleanup(filename)
 	# import_obj()
 	# double_sided()
 	modify_tex()
