@@ -12,7 +12,7 @@ def read_func() :
 
 	print(data)
 
-	json_data.close()
+	
 
 
 	# target = json.loads("C:/Users/Jennifer Zhang/Documents/CLOTHES_SIMULATION/textureData.json")
@@ -20,7 +20,7 @@ def read_func() :
 
 	print ("hi")
  
-
+	json_data.close()
 
 
 
