@@ -19,19 +19,25 @@ def get_working_dir () :
 	 
 def load_json() :
 	json_data = open(wrspFldr + '/textureData.json')
+	global data
 	# target to parse
 	data = json.load(json_data)
+	global item_num
 	# number of items
 	item_num = len(data)
+
 	json_data.close()
+	print("file loaded")
 
 
 
 def import_obj (fn,rel_path) :
 
 	#import obj files  
-	cmds.file( wrspFldr + '//Models/' + rel_path + fn + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = fn, mnc = True)
+	cmds.file( wrspFldr + '/Models/' + rel_path + fn + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = fn, mnc = True)
 	
+
+	global tempfn
 	tempfn = fn + ":Mesh"
 
 	cmds.select(tempfn,r = True)
@@ -40,7 +46,7 @@ def import_obj (fn,rel_path) :
 
 	cmds.xform(cp = True)
 	cmds.move(0,0,0, rpr = True)
-	cmds.rotate(-90, rotateX = True)
+	# cmds.rotate(-90, rotateX = True)
 	cmds.scale(3,3,3, scaleXYZ = True)
 	cmds.makeIdentity( apply = True, t = 1, r = 1, s = 1, n = 0, pn = 1)
 
@@ -64,7 +70,7 @@ def export_fbx(fn) :
 	cmds.select(tempfn, r = True)	
 
 	# need to choose a folder for output
-	cmds.file(wrspFldr + '//' + fn + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
+	cmds.file(wrspFldr + '//OUTPUT/' + fn + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
 
 
 def cleanup(fn) :
@@ -78,11 +84,14 @@ def cleanup(fn) :
 
 # MAIN FUNCTION
 def main():
+	print("Start")
 	
+
+
 	get_working_dir()
 	load_json()
 
-	for i in range(0:item_num-1):
+	for i in range(item_num):
 		
 		filename = data[i]["name"]	#filename without extension
 		path = data[i]["pathfolder"] # reletive to wrspFldr
@@ -91,11 +100,12 @@ def main():
 		B = data[i]["b"]
 
 		cleanup(filename)
-		import_obj(filename)
+		import_obj(filename,path)
+		# print(wrspFldr + '/Models/' + path + filename + '.obj')
 		modify_tex(filename,R,G,B)
 		export_fbx(filename)
 
-	print "Here"
+	print ("End")
 
 
 if __name__ == '__main__':
