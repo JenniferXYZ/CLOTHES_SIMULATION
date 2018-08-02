@@ -65,12 +65,12 @@ def modify_tex (fn,R,G,B) :
 	cmds.sets(e = True, forceElement = "TextureASG")
 
 
-def export_fbx(fn) :
+def export_fbx(fn,index) :
 # 	# cmds.select(ado = True)
 	cmds.select(tempfn, r = True)	
 
 	# need to choose a folder for output
-	cmds.file(wrspFldr + '//OUTPUT/' + fn + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
+	cmds.file(wrspFldr + '//OUTPUT/' + str(index) + '_' + fn + '.fbx', f = True, op = "v = 0;", typ = "FBX export", pr = True, es = True)
 
 
 def cleanup(fn) :
@@ -103,7 +103,7 @@ def main():
 		import_obj(filename,path)
 		# print(wrspFldr + '/Models/' + path + filename + '.obj')
 		modify_tex(filename,R,G,B)
-		export_fbx(filename)
+		export_fbx(filename,i)
 
 	print ("End")
 

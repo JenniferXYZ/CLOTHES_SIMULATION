@@ -20,23 +20,9 @@ def get_working_dir () :
 def process(fn): 
 
 	
-	cmds.file(wrspFldr + '//Models/woman/' + fn + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = fn, mnc = False)
+	cmds.file(wrspFldr + '//Models/man/raw/' + fn + '.obj', i = True, type = 'OBJ', iv = True, ra = True, ns = fn, mnc = False)
 
-
-
-	# # try to get mesh name, (buggy)
-	# objects = cmds.ls(tr = True)
-    
-	# for object in objects:
-
- #    	print (object)
-
-
-	# cmds.select(ado = True)
-	# object_List = cmds.ls(selection = True)
-
-	#print (Object_List)
-	print (fn)
+	# print (fn)
 	# n = fn + ":Mesh"
 	# print (n)
 
@@ -51,7 +37,7 @@ def process(fn):
 	cmds.scale(3,3,3, scaleXYZ = True)
 	cmds.makeIdentity( apply = True, t = 1, r = 1, s = 1, n = 0, pn = 1)
 
-	cmds.file(wrspFldr + '//Models/woman/process_1/' + fn + '_new.obj', f = True, op = "v = 0;", typ = "OBJexport", pr = True, es = True)
+	cmds.file(wrspFldr + '//Models/man/process_1/' + fn + '_new.obj', f = True, op = "v = 0;", typ = "OBJexport", pr = True, es = True)
 
 def cleanup(fn) :
 	cmds.select(all = True)
@@ -69,9 +55,10 @@ def cleanup(fn) :
 # MAIN FUNCTION
 def main():
 	
+	print("Im here")
 	get_working_dir ()
 
-	listOfFiles = os.listdir(wrspFldr + '//Models/woman')
+	listOfFiles = os.listdir(wrspFldr + '//Models/man/raw')
 	pattern = "*.obj"
 
 	if not listOfFiles:

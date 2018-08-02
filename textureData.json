@@ -4,119 +4,531 @@
         "pathfolder": "woman/process_1/",
         "r": 35,
         "g": 161,
-        "b": 255,
-        "undefined": 1
+        "b": 255
     },
     {
         "name": "tee_002_new",
         "pathfolder": "woman/process_1/",
         "r": 56,
         "g": 232,
-        "b": 124,
-        "undefined": 2
+        "b": 124
     },
     {
         "name": "tee_003_new",
         "pathfolder": "woman/process_1/",
         "r": 255,
         "g": 255,
-        "b": 48,
-        "undefined": 3
+        "b": 48
     },
     {
         "name": "tee_004_new",
         "pathfolder": "woman/process_1/",
         "r": 232,
         "g": 164,
-        "b": 32,
-        "undefined": 4
+        "b": 32
     },
     {
         "name": "tee_005_new",
         "pathfolder": "woman/process_1/",
         "r": 255,
         "g": 97,
-        "b": 71,
-        "undefined": 5
+        "b": 71
     },
     {
         "name": "tee_006_new",
         "pathfolder": "woman/process_1/",
         "r": 168,
         "g": 35,
-        "b": 255,
-        "undefined": 6
+        "b": 255
     },
     {
         "name": "tee_007_new",
         "pathfolder": "woman/process_1/",
         "r": 56,
         "g": 231,
-        "b": 232,
-        "undefined": 7
+        "b": 232
     },
     {
         "name": "tee_008_new",
         "pathfolder": "woman/process_1/",
         "r": 255,
         "g": 255,
-        "b": 48,
-        "undefined": 8
+        "b": 48
     },
     {
         "name": "tee_009_new",
         "pathfolder": "woman/process_1/",
         "r": 232,
         "g": 116,
-        "b": 48,
-        "undefined": 9
+        "b": 48
     },
     {
         "name": "tee_010_new",
         "pathfolder": "woman/process_1/",
         "r": 183,
         "g": 71,
-        "b": 255,
-        "undefined": 10
+        "b": 255
     },
     {
         "name": "tee_011_new",
         "pathfolder": "woman/process_1/",
         "r": 160,
         "g": 255,
-        "b": 151,
-        "undefined": 11
+        "b": 151
     },
     {
         "name": "tee_012_new",
         "pathfolder": "woman/process_1/",
         "r": 232,
         "g": 208,
-        "b": 163,
-        "undefined": 12
+        "b": 163
     },
     {
         "name": "tee_013_new",
         "pathfolder": "woman/process_1/",
         "r": 255,
         "g": 164,
-        "b": 220,
-        "undefined": 13
+        "b": 220
     },
     {
         "name": "tee_014_new",
         "pathfolder": "woman/process_1/",
         "r": 153,
         "g": 186,
-        "b": 232,
-        "undefined": 14
+        "b": 232
     },
     {
         "name": "tee_015_new",
         "pathfolder": "woman/process_1/",
         "r": 193,
         "g": 255,
-        "b": 187,
-        "undefined": 15
+        "b": 187
+    },
+    {
+        "name": "tee_016_new",
+        "pathfolder": "woman/process_1/",
+        "r": 42,
+        "g": 161,
+        "b": 255
+    },
+    {
+        "name": "tee_017_new",
+        "pathfolder": "woman/process_1/",
+        "r": 56,
+        "g": 232,
+        "b": 124
+    },
+    {
+        "name": "tee_018_new",
+        "pathfolder": "woman/process_1/",
+        "r": 255,
+        "g": 240,
+        "b": 70
+    },
+    {
+        "name": "tee_019_new",
+        "pathfolder": "woman/process_1/",
+        "r": 230,
+        "g": 150,
+        "b": 32
+    },
+    {
+        "name": "tee_020_new",
+        "pathfolder": "woman/process_1/",
+        "r": 255,
+        "g": 90,
+        "b": 71
+    },
+    {
+        "name": "tee_021_new",
+        "pathfolder": "woman/process_1/",
+        "r": 168,
+        "g": 50,
+        "b": 255
+    },
+    {
+        "name": "tee_022_new",
+        "pathfolder": "woman/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 200
+    },
+    {
+        "name": "tee_023_new",
+        "pathfolder": "woman/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 69
+    },
+    {
+        "name": "tee_024_new",
+        "pathfolder": "woman/process_1/",
+        "r": 232,
+        "g": 100,
+        "b": 48
+    },
+    {
+        "name": "tee_025_new",
+        "pathfolder": "woman/process_1/",
+        "r": 190,
+        "g": 71,
+        "b": 255
+    },
+    {
+        "name": "tee_026_new",
+        "pathfolder": "woman/process_1/",
+        "r": 160,
+        "g": 255,
+        "b": 170
+    },
+    {
+        "name": "tee_027_new",
+        "pathfolder": "woman/process_1/",
+        "r": 232,
+        "g": 208,
+        "b": 163
+    },
+    {
+        "name": "tee_028_new",
+        "pathfolder": "woman/process_1/",
+        "r": 255,
+        "g": 180,
+        "b": 220
+    },
+    {
+        "name": "tee_029_new",
+        "pathfolder": "woman/process_1/",
+        "r": 160,
+        "g": 186,
+        "b": 232
+    },
+    {
+        "name": "tee_030_new",
+        "pathfolder": "woman/process_1/",
+        "r": 193,
+        "g": 255,
+        "b": 200
+    },
+    {
+        "name": "tee_031_new",
+        "pathfolder": "woman/process_1/",
+        "r": 168,
+        "g": 40,
+        "b": 255
+    },
+    {
+        "name": "tee_032_new",
+        "pathfolder": "woman/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 255
+    },
+    {
+        "name": "tee_033_new",
+        "pathfolder": "woman/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 60
+    },
+    {
+        "name": "tee_034_new",
+        "pathfolder": "woman/process_1/",
+        "r": 232,
+        "g": 116,
+        "b": 60
+    },
+    {
+        "name": "tee_035_new",
+        "pathfolder": "woman/process_1/",
+        "r": 183,
+        "g": 85,
+        "b": 255
+    },
+    {
+        "name": "tee_036_new",
+        "pathfolder": "woman/process_1/",
+        "r": 160,
+        "g": 34,
+        "b": 255
+    },
+    {
+        "name": "tee_001_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 90,
+        "b": 71
+    },
+    {
+        "name": "tee_002_new",
+        "pathfolder": "man/process_1/",
+        "r": 168,
+        "g": 50,
+        "b": 255
+    },
+    {
+        "name": "tee_003_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 200
+    },
+    {
+        "name": "tee_004_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 69
+    },
+    {
+        "name": "tee_005_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 100,
+        "b": 48
+    },
+    {
+        "name": "tee_006_new",
+        "pathfolder": "man/process_1/",
+        "r": 190,
+        "g": 71,
+        "b": 255
+    },
+    {
+        "name": "tee_007_new",
+        "pathfolder": "man/process_1/",
+        "r": 160,
+        "g": 255,
+        "b": 170
+    },
+    {
+        "name": "tee_008_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 208,
+        "b": 163
+    },
+    {
+        "name": "tee_009_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 180,
+        "b": 220
+    },
+    {
+        "name": "tee_010_new",
+        "pathfolder": "man/process_1/",
+        "r": 160,
+        "g": 186,
+        "b": 232
+    },
+    {
+        "name": "tee_011_new",
+        "pathfolder": "man/process_1/",
+        "r": 193,
+        "g": 255,
+        "b": 200
+    },
+    {
+        "name": "tee_012_new",
+        "pathfolder": "man/process_1/",
+        "r": 168,
+        "g": 40,
+        "b": 255
+    },
+    {
+        "name": "tee_013_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 255
+    },
+    {
+        "name": "tee_014_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 60
+    },
+    {
+        "name": "tee_015_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 116,
+        "b": 60
+    },
+    {
+        "name": "tee_016_new",
+        "pathfolder": "man/process_1/",
+        "r": 183,
+        "g": 85,
+        "b": 255
+    },
+    {
+        "name": "tee_017_new",
+        "pathfolder": "man/process_1/",
+        "r": 160,
+        "g": 34,
+        "b": 255
+    },
+    {
+        "name": "tee_018_new",
+        "pathfolder": "man/process_1/",
+        "r": 35,
+        "g": 161,
+        "b": 255
+    },
+    {
+        "name": "tee_019_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 232,
+        "b": 124
+    },
+    {
+        "name": "tee_020_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 48
+    },
+    {
+        "name": "tee_021_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 164,
+        "b": 32
+    },
+    {
+        "name": "tee_022_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 97,
+        "b": 71
+    },
+    {
+        "name": "tee_023_new",
+        "pathfolder": "man/process_1/",
+        "r": 168,
+        "g": 35,
+        "b": 255
+    },
+    {
+        "name": "tee_024_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 232
+    },
+    {
+        "name": "tee_025_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 48
+    },
+    {
+        "name": "tee_026_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 116,
+        "b": 48
+    },
+    {
+        "name": "tee_027_new",
+        "pathfolder": "man/process_1/",
+        "r": 183,
+        "g": 71,
+        "b": 255
+    },
+    {
+        "name": "tee_028_new",
+        "pathfolder": "man/process_1/",
+        "r": 160,
+        "g": 255,
+        "b": 151
+    },
+    {
+        "name": "tee_029_new",
+        "pathfolder": "man/process_1/",
+        "r": 232,
+        "g": 208,
+        "b": 163
+    },
+    {
+        "name": "tee_030_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 164,
+        "b": 220
+    },
+    {
+        "name": "tee_031_new",
+        "pathfolder": "man/process_1/",
+        "r": 153,
+        "g": 186,
+        "b": 232
+    },
+    {
+        "name": "tee_032_new",
+        "pathfolder": "man/process_1/",
+        "r": 193,
+        "g": 255,
+        "b": 187
+    },
+    {
+        "name": "tee_033_new",
+        "pathfolder": "man/process_1/",
+        "r": 42,
+        "g": 161,
+        "b": 255
+    },
+    {
+        "name": "tee_034_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 232,
+        "b": 124
+    },
+    {
+        "name": "tee_035_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 240,
+        "b": 70
+    },
+    {
+        "name": "tee_036_new",
+        "pathfolder": "man/process_1/",
+        "r": 230,
+        "g": 150,
+        "b": 32
+    },
+    {
+        "name": "tee_037_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 90,
+        "b": 71
+    },
+    {
+        "name": "tee_038_new",
+        "pathfolder": "man/process_1/",
+        "r": 168,
+        "g": 50,
+        "b": 255
+    },
+    {
+        "name": "tee_039_new",
+        "pathfolder": "man/process_1/",
+        "r": 56,
+        "g": 231,
+        "b": 200
+    },
+    {
+        "name": "tee_040_new",
+        "pathfolder": "man/process_1/",
+        "r": 255,
+        "g": 255,
+        "b": 69
     }
 ]
